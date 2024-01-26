@@ -12,11 +12,11 @@ const List = sequelize.define('List', {
 List.hasMany(Task, {
   foreignKey: { name: 'listId', allowNull: false },
   onDelete: 'CASCADE',
+  as: 'tasks',
 });
 Task.belongsTo(List, {
   foreignKey: { name: 'listId', allowNull: false },
   onDelete: 'CASCADE',
 });
-List.sync({ force: true });
 
 module.exports = List;

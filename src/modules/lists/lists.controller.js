@@ -2,8 +2,8 @@ const listsService = require('./lists.service');
 
 const ListsController = {
   insert: async (req, res) => {
-    await listsService.insert(req.body);
-    res.status(200).send();
+    const list = await listsService.insert(req.body);
+    res.status(200).json(list);
   },
 
   getAll: async (_, res) => {
