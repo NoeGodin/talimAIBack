@@ -6,6 +6,11 @@ const Task = sequelize.define('Task', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  importance:{
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
+  }
 });
 
 module.exports = Task;

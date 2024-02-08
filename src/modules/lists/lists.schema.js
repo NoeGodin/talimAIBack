@@ -7,6 +7,11 @@ const List = sequelize.define('List', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  importance:{
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
+  }
 });
 
 List.hasMany(Task, {
